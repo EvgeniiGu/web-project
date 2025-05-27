@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Hello</title>
+        <script src="scr.js"></script>
+        <link rel="stylesheet" href="fon.css" />
+        <script type="text/javascript">
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js')
+                .then(function(registration) {
+                    console.log('Registration successful, scope is:', registration.scope);
+                })
+                .catch(function(error) {
+                    console.log('Service worker registration failed, error:', error);
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div class="center">
+            <p id="text"></p>
+        </div>
+        <div class="buttons">
+            <button data-number="1">1</button>
+            <button data-number="2">2</button>
+            <button data-number="3">3</button>
+            <button data-number="4">4</button>
+            <button data-number="5">5</button>
+        </div>
+    </body>
+</html>
